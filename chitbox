@@ -1,0 +1,34 @@
+CC = gcc
+run_a: pktA.c
+	@echo "programm A is compiled"
+	@${CC} -o run_a pktA.c
+
+run_b: pktB.c
+	@echo "programm B is compiled"
+	@${CC} -o run_b pktB.c && 
+
+run_c: pktC.c
+	@echo "programm C is compiled"
+	@${CC} -o run_c pktC.c
+	
+run_d: pktD.c
+	@echo "programm D is compiled"
+	@${CC} -o run_d pktD.c
+
+run_e: pktE.c
+	@echo "programm E is compiled"
+	@${CC} -o run_e pktE.c
+
+all: run_a run_b run_c run_d run_e
+
+help:
+	@echo "Here is list of possible commands:"
+	@echo "run_a - run programm a"
+	@echo "run_b - run programm b"
+	@echo "run_c - run programm c"
+	@echo "run_d - run programm d"
+	@echo "run_e - run programm e"
+	@echo "clear - delete compilation files"
+
+clean:
+	rm -f run_a run_b run_c run_d run_e
